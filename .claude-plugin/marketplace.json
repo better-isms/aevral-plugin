@@ -1,0 +1,25 @@
+{
+  "name": "aevral-plugins",
+  "description": "Aevral: catch security flaws before you merge. By Better ISMS.",
+  "version": "0.1.0",
+  "owner": {
+    "name": "Better ISMS",
+    "email": "support@ismscopilot.com",
+    "url": "https://aevral.com"
+  },
+  "plugins": [
+    {
+      "name": "aevral",
+      "source": "./",
+      "displayName": "Aevral",
+      "description": "Catch security flaws before you merge. Setup skill for the Aevral GitHub App. Public repos are free up to 500 reviews per organization per month.",
+      "category": "security",
+      "keywords": [
+        "security",
+        "code-review",
+        "pull-request",
+        "authorization"
+      ]
+    }
+  ]
+}

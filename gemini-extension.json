@@ -1,0 +1,6 @@
+{
+  "name": "aevral",
+  "version": "0.1.0",
+  "description": "Catch security flaws before you merge. Set up the Aevral GitHub App so pull requests get a security review. Public repos are free up to 500 reviews per organization per month.",
+  "contextFileName": "GEMINI.md"
+}
