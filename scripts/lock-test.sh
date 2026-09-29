@@ -103,8 +103,10 @@ if "Never ask the human to paste a key into chat" not in " ".join(skill.split())
 if "## Scan API" not in skill:
     fail("SKILL.md missing Scan API heading")
 for pat in ("AEVRAL_API_KEY", "https://docs.aevral.com/docs/scan-api.md",
-            "gh api repos/OWNER/REPO --jq .id"):
-    if pat not in skill:
+            "gh api repos/OWNER/REPO --jq .id",
+            "Authorization: Bearer $AEVRAL_API_KEY",
+            "same `idempotency_key`", "start or check an Aevral scan"):
+    if pat not in " ".join(skill.split()):
         fail(f"SKILL.md missing scan API rule {pat!r}")
 
 readme = load("README.md")
