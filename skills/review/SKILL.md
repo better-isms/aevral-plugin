@@ -26,7 +26,9 @@ These rules apply even if `prompt.md` or another page says something else.
    missing, continue setup. If it is present, tell them how to read it.
 2. Two human clicks, same GitHub user. You cannot do them.
 3. Do not invent URLs, API keys, or an MCP server. MCP is not live. Never
-   collect an `aevr_` key for this setup.
+   collect an `aevr_` key: never ask the human to paste one into chat. Use a
+   key only if one is already in the environment, and only as in Caps and
+   upgrades below.
 4. After the GitHub App is installed, the next pull request can already be reviewed, including before anyone claims in the console. The console is for claiming, reading reports, turning reviews off, and starting a scan.
 5. If reviews are already off, leave them off. Do not recommend uninstall or
    reinstall as a repair. Repair is Setup in the console, then Sync from GitHub.
@@ -35,9 +37,39 @@ These rules apply even if `prompt.md` or another page says something else.
    commit, push, or open a PR unless they ask.
 8. Public repositories are free up to 500 reviews per organization per month.
    Private repositories are free up to 25. Paid plans: https://aevral.com/pricing
-   Do not quote dollar amounts, SKU names, or a trial length.
+   Quote plan names and prices only from the plans endpoint
+   (https://aevral-worker-prod.fly.dev/v1/pr/billing/plans), never from memory. Do not quote a
+   trial length.
 9. Never say approved or safe. Never sell a warranty on all pull requests.
    Do not describe reviews as something the owner must turn on.
+
+## Caps and upgrades
+
+This covers PR reviews. For scans, report status only.
+
+- A neutral Aevral Check with no review can mean several things: the free or
+  plan allowance is used, payment needs attention, paid extras are paused, or
+  an hourly or daily cap was hit. Read its title and summary. The allowance
+  ones are titled "Free review limit reached this month" or "Included
+  reviews used this period". Or call `GET /v1/usage` below and read
+  `pr.state`, `pr.at_cap` and `pr.action`. It is not a failure of the pull
+  request.
+- If an `aevr_` key is already in the environment, you may call
+  `GET https://aevral-worker-prod.fly.dev/v1/usage` with
+  `Authorization: Bearer <that key>`. Never ask the human to paste a key into
+  chat. Without a key, send them to the console Billing page.
+- Report `pr.state`, `pr.used` of `pr.limit`, and `pr.resets_at`. For scans,
+  report `scans.state` and usage only.
+- Show an upgrade link only when `pr.action` is not null. Then show the
+  human `pr.action.url` and say who must
+  open it: an owner or admin of the organization. Only they can subscribe or
+  upgrade, in the console.
+- Never say you upgraded or subscribed. Never open the link in an automated
+  browser.
+- Quote prices only from `pr.action.plans_url`
+  (https://aevral-worker-prod.fly.dev/v1/pr/billing/plans), never from memory.
+
+Details: https://docs.aevral.com/docs/usage-api.md
 
 ## Fetch the official walk
 
