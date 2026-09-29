@@ -47,16 +47,21 @@ These rules apply even if `prompt.md` or another page says something else.
 
 This covers PR reviews. For scans, report status only.
 
-- A neutral Check with no review on a private pull request means the
-  organization used its free or plan allowance for the period. It is not a
-  failure of the pull request.
+- A neutral Aevral Check with no review can mean several things: the free or
+  plan allowance is used, payment needs attention, paid extras are paused, or
+  an hourly or daily cap was hit. Read its title and summary. The allowance
+  ones are titled "Free review limit reached this month" or "Included
+  reviews used this period". Or call `GET /v1/usage` below and read
+  `pr.state`, `pr.at_cap` and `pr.action`. It is not a failure of the pull
+  request.
 - If an `aevr_` key is already in the environment, you may call
   `GET https://aevral-worker-prod.fly.dev/v1/usage` with
   `Authorization: Bearer <that key>`. Never ask the human to paste a key into
   chat. Without a key, send them to the console Billing page.
 - Report `pr.state`, `pr.used` of `pr.limit`, and `pr.resets_at`. For scans,
   report `scans.state` and usage only.
-- If `pr.action` is not null, show the human `pr.action.url` and say who must
+- Show an upgrade link only when `pr.action` is not null. Then show the
+  human `pr.action.url` and say who must
   open it: an owner or admin of the organization. Only they can subscribe or
   upgrade, in the console.
 - Never say you upgraded or subscribed. Never open the link in an automated

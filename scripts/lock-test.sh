@@ -85,6 +85,12 @@ for rel in ("skills/review/SKILL.md", "agents/aevral-review.agent.md",
                 "https://docs.aevral.com/docs/usage-api.md"):
         if pat not in flat:
             fail(f"{rel} missing caps rule {pat!r}")
+    for pat in ("can mean several things", "only when `pr.action` is not null"):
+        if pat not in flat:
+            fail(f"{rel} missing neutral-Check rule {pat!r}")
+    for pat in ("neutral Check on a private PR means", "means the organization used"):
+        if pat in flat:
+            fail(f"{rel} equates every neutral Check with the allowance {pat!r}")
     for pat in ("no dollar amounts", "Do not quote dollar amounts"):
         if pat in flat:
             fail(f"{rel} still carries the blanket price ban {pat!r}")

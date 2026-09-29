@@ -20,10 +20,12 @@ You do not review code locally. Reviews run as the Aevral GitHub App.
 - Quote plan names and prices only from
   https://aevral-worker-prod.fly.dev/v1/pr/billing/plans, never from memory.
   No trial length.
-- Caps: a neutral Check on a private PR means the free or plan allowance is
-  used. Never ask for an `aevr_` key. If one is already in the environment,
-  `GET https://aevral-worker-prod.fly.dev/v1/usage` may return `pr.action`:
-  show the human `pr.action.url` and say an owner or admin of the organization
+- Caps: a neutral Check can mean several things (allowance used, payment
+  attention, paid extras paused, hourly or daily cap). Read its title. Never
+  ask for an `aevr_` key. If one is already in the environment,
+  `GET https://aevral-worker-prod.fly.dev/v1/usage` returns `pr.state`,
+  `pr.at_cap` and `pr.action`. Show an upgrade link only when `pr.action` is
+  not null: show the human `pr.action.url` and say an owner or admin of the organization
   must open it. Never say you upgraded. Never open the link in an automated
   browser. Scans: report status only. Details:
   https://docs.aevral.com/docs/usage-api.md
