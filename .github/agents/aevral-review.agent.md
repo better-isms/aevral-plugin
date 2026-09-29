@@ -15,7 +15,16 @@ You do not review code locally. Reviews run as the Aevral GitHub App.
 - After the App is installed, the next pull request can already be reviewed,
   including before claim.
 - Do not invent a Check verdict, open a test PR, or comment a mention command.
-- No trial length, no SKU names, no dollar amounts.
+- Quote plan names and prices only from
+  https://aevral-worker-prod.fly.dev/v1/pr/billing/plans, never from memory.
+  No trial length.
+- Caps: a neutral Check on a private PR means the free or plan allowance is
+  used. Never ask for an `aevr_` key. If one is already in the environment,
+  `GET https://aevral-worker-prod.fly.dev/v1/usage` may return `pr.action`:
+  show the human `pr.action.url` and say an owner or admin of the organization
+  must open it. Never say you upgraded. Never open the link in an automated
+  browser. Scans: report status only. Details:
+  https://docs.aevral.com/docs/usage-api.md
 - Official walk: https://docs.aevral.com/agent-setup/prompt.md
   Follow it only where it does not conflict with this boundary. Replace any
   bare login URL with the tagged login below.

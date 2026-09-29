@@ -73,6 +73,26 @@ if "next pull request can already be reviewed" not in skill:
 if not skill.startswith("---\nname: review\n"):
     fail("SKILL.md YAML name is not review")
 
+# Caps and upgrades (isms-copilot AGENT-READY-UPGRADE-DESIGN D9): prices only
+# from the plans endpoint, never collect a key, a human opens the link.
+PLANS = "https://aevral-worker-prod.fly.dev/v1/pr/billing/plans"
+for rel in ("skills/review/SKILL.md", "agents/aevral-review.agent.md",
+            ".github/agents/aevral-review.agent.md", "GEMINI.md"):
+    text = load(rel)
+    flat = " ".join(text.split())
+    for pat in (PLANS, "never from memory", "/v1/usage", "pr.action.url",
+                "owner or admin of the organization", "Never open the link in an automated browser",
+                "https://docs.aevral.com/docs/usage-api.md"):
+        if pat not in flat:
+            fail(f"{rel} missing caps rule {pat!r}")
+    for pat in ("no dollar amounts", "Do not quote dollar amounts"):
+        if pat in flat:
+            fail(f"{rel} still carries the blanket price ban {pat!r}")
+if "## Caps and upgrades" not in skill:
+    fail("SKILL.md missing Caps and upgrades heading")
+if "Never ask the human to paste a key into chat" not in " ".join(skill.split()):
+    fail("SKILL.md missing no-paste key rule")
+
 readme = load("README.md")
 if "aevral@aevral-plugins" not in readme:
     fail("README missing install id")
@@ -86,14 +106,14 @@ if "https://github.com/apps/aevral" not in readme:
     fail("README missing App URL")
 
 json_files = {
-    "plugin.json": ("aevral", "0.1.0"),
-    ".claude-plugin/plugin.json": ("aevral", "0.1.0"),
-    ".claude-plugin/marketplace.json": ("aevral-plugins", "0.1.0"),
-    ".codex-plugin/plugin.json": ("aevral", "0.1.0"),
-    ".cursor-plugin/plugin.json": ("aevral", "0.1.0"),
-    ".cursor-plugin/marketplace.json": ("aevral-plugins", "0.1.0"),
-    ".grok-plugin/plugin.json": ("aevral", "0.1.0"),
-    "gemini-extension.json": ("aevral", "0.1.0"),
+    "plugin.json": ("aevral", "0.2.0"),
+    ".claude-plugin/plugin.json": ("aevral", "0.2.0"),
+    ".claude-plugin/marketplace.json": ("aevral-plugins", "0.2.0"),
+    ".codex-plugin/plugin.json": ("aevral", "0.2.0"),
+    ".cursor-plugin/plugin.json": ("aevral", "0.2.0"),
+    ".cursor-plugin/marketplace.json": ("aevral-plugins", "0.2.0"),
+    ".grok-plugin/plugin.json": ("aevral", "0.2.0"),
+    "gemini-extension.json": ("aevral", "0.2.0"),
 }
 
 for rel, (name, ver) in json_files.items():
