@@ -98,6 +98,16 @@ if "## Caps and upgrades" not in skill:
     fail("SKILL.md missing Caps and upgrades heading")
 if "Never ask the human to paste a key into chat" not in " ".join(skill.split()):
     fail("SKILL.md missing no-paste key rule")
+# Scan API (isms-copilot AGENT-API-QUICKWINS-DESIGN Q7): agents look for
+# AEVRAL_API_KEY and read the scan API docs.
+if "## Scan API" not in skill:
+    fail("SKILL.md missing Scan API heading")
+for pat in ("AEVRAL_API_KEY", "https://docs.aevral.com/docs/scan-api.md",
+            "gh api repos/OWNER/REPO --jq .id",
+            "Authorization: Bearer $AEVRAL_API_KEY",
+            "same `idempotency_key`", "start or check an Aevral scan"):
+    if pat not in " ".join(skill.split()):
+        fail(f"SKILL.md missing scan API rule {pat!r}")
 
 readme = load("README.md")
 if "aevral@aevral-plugins" not in readme:
@@ -112,14 +122,14 @@ if "https://github.com/apps/aevral" not in readme:
     fail("README missing App URL")
 
 json_files = {
-    "plugin.json": ("aevral", "0.2.0"),
-    ".claude-plugin/plugin.json": ("aevral", "0.2.0"),
-    ".claude-plugin/marketplace.json": ("aevral-plugins", "0.2.0"),
-    ".codex-plugin/plugin.json": ("aevral", "0.2.0"),
-    ".cursor-plugin/plugin.json": ("aevral", "0.2.0"),
-    ".cursor-plugin/marketplace.json": ("aevral-plugins", "0.2.0"),
-    ".grok-plugin/plugin.json": ("aevral", "0.2.0"),
-    "gemini-extension.json": ("aevral", "0.2.0"),
+    "plugin.json": ("aevral", "0.2.1"),
+    ".claude-plugin/plugin.json": ("aevral", "0.2.1"),
+    ".claude-plugin/marketplace.json": ("aevral-plugins", "0.2.1"),
+    ".codex-plugin/plugin.json": ("aevral", "0.2.1"),
+    ".cursor-plugin/plugin.json": ("aevral", "0.2.1"),
+    ".cursor-plugin/marketplace.json": ("aevral-plugins", "0.2.1"),
+    ".grok-plugin/plugin.json": ("aevral", "0.2.1"),
+    "gemini-extension.json": ("aevral", "0.2.1"),
 }
 
 for rel, (name, ver) in json_files.items():
