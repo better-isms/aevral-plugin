@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1
+
+Scan API pointer. The skill names `AEVRAL_API_KEY` as the environment
+variable to look for (never collected in chat) and links the Scan API docs
+(https://docs.aevral.com/docs/scan-api.md): start a scan with
+`POST /v1/scans`, poll `status_url` every 30 seconds, stop on any 402.
+
 ## 0.2.0
 
 Caps and upgrades. A neutral Check can mean several things (allowance used,
