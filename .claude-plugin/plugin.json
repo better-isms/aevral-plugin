@@ -1,8 +1,8 @@
 {
   "name": "aevral",
   "displayName": "Aevral",
-  "version": "0.2.1",
-  "description": "Catch security flaws before you merge. Setup skill for the Aevral GitHub App: authorization, IDOR, and business-logic reviews on pull requests, with a suggested fix you apply. Public repos are free up to 500 reviews per organization per month.",
+  "version": "0.2.2",
+  "description": "Aevral is an AI security reviewer for GitHub pull requests. Setup skill for the Aevral GitHub App: reviews look for access control, business logic, injection, XSS, SSRF, path traversal, and LLM-integration flaws, with a suggested fix you apply. Public repos are free up to 500 reviews per organization per month.",
   "author": {
     "name": "Better ISMS",
     "email": "support@ismscopilot.com",

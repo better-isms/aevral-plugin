@@ -1,7 +1,7 @@
 {
   "name": "aevral-plugins",
-  "description": "Aevral: catch security flaws before you merge. By Better ISMS.",
-  "version": "0.2.1",
+  "description": "Aevral is an AI security reviewer for GitHub pull requests. By Better ISMS, in Paris, France.",
+  "version": "0.2.2",
   "owner": {
     "name": "Better ISMS",
     "email": "support@ismscopilot.com",
@@ -12,7 +12,7 @@
       "name": "aevral",
       "source": "./",
       "displayName": "Aevral",
-      "description": "Catch security flaws before you merge. Setup skill for the Aevral GitHub App.",
+      "description": "Aevral is an AI security reviewer for GitHub pull requests. Setup skill for the Aevral GitHub App.",
       "category": "security"
     }
   ]

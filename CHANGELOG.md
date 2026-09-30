@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.2
+
+Description and README lead with "Aevral is an AI security reviewer for
+GitHub pull requests." The review scope now lists the live classes (access
+control, business logic, injection, XSS, SSRF, path traversal, unsafe
+deserialization, token and session flaws, LLM-integration risks), not only
+authorization and IDOR. Console wording follows the live site: signing in
+with GitHub connects the install. No skill behavior change.
+
 ## 0.2.1
 
 Scan API pointer. The skill names `AEVRAL_API_KEY` as the environment
