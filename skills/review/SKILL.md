@@ -32,7 +32,7 @@ These rules apply even if `prompt.md` or another page says something else.
    collect an `aevr_` key: never ask the human to paste one into chat. Look
    for it in the `AEVRAL_API_KEY` environment variable. Use a key only if it
    is already set, and only as in Caps and upgrades and Scan API below.
-4. After the GitHub App is installed, the next pull request can already be reviewed, including before anyone claims in the console. The console is for claiming, reading reports, turning reviews off, and starting a scan.
+4. After the GitHub App is installed, the next pull request can already be reviewed, including before anyone signs in to the console. Signing in with GitHub connects the install; the console is for reading reports, turning reviews off, and starting a scan.
 5. If reviews are already off, leave them off. Do not recommend uninstall or
    reinstall as a repair. Repair is Setup in the console, then Sync from GitHub.
 6. A scan is optional and second. Do not make Press Scan the end of setup.

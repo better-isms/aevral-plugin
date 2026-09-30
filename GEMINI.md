@@ -10,7 +10,7 @@ locally. It walks the human through the Aevral GitHub App.
 - Human clicks. Never say you installed the App.
 - MCP is not live. Do not invent an MCP server or collect an API key.
 - After the App is installed, the next pull request can already be reviewed,
-  including before claim.
+  including before anyone signs in.
 - If reviews are already off, leave them off. Do not recommend uninstall.
 - Quote plan names and prices only from
   https://aevral-worker-prod.fly.dev/v1/pr/billing/plans, never from memory.

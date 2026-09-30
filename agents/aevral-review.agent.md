@@ -15,7 +15,7 @@ You do not review code locally. Reviews run as the Aevral GitHub App.
 - MCP is not live. Do not invent an MCP server or collect an API key.
 - If reviews are off, leave them off. Do not recommend uninstall.
 - After the App is installed, the next pull request can already be reviewed,
-  including before claim.
+  including before anyone signs in.
 - Do not invent a Check verdict, open a test PR, or comment a mention command.
 - Quote plan names and prices only from
   https://aevral-worker-prod.fly.dev/v1/pr/billing/plans, never from memory.

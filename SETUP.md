@@ -14,7 +14,7 @@ console, then Sync.
 ## Step 1. Tagged console login (you)
 
 Open the login that matches the tool that sent you here, so the listing source
-is stored before claim:
+is stored before sign-in:
 
 - Claude Code: https://app.aevral.com/login?ref=claude-plugin
 - Codex CLI: https://app.aevral.com/login?ref=codex-cli
@@ -35,7 +35,7 @@ Contents read, Metadata, Checks write, Pull requests read and write. No write
 access to your code.
 
 After this click, the next pull request can already be reviewed, including
-before the console finishes claiming.
+before anyone signs in to the console.
 
 ## Step 3. Confirm in the console
 
