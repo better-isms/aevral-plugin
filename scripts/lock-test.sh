@@ -122,14 +122,14 @@ if "https://github.com/apps/aevral" not in readme:
     fail("README missing App URL")
 
 json_files = {
-    "plugin.json": ("aevral", "0.2.1"),
-    ".claude-plugin/plugin.json": ("aevral", "0.2.1"),
-    ".claude-plugin/marketplace.json": ("aevral-plugins", "0.2.1"),
-    ".codex-plugin/plugin.json": ("aevral", "0.2.1"),
-    ".cursor-plugin/plugin.json": ("aevral", "0.2.1"),
-    ".cursor-plugin/marketplace.json": ("aevral-plugins", "0.2.1"),
-    ".grok-plugin/plugin.json": ("aevral", "0.2.1"),
-    "gemini-extension.json": ("aevral", "0.2.1"),
+    "plugin.json": ("aevral", "0.2.2"),
+    ".claude-plugin/plugin.json": ("aevral", "0.2.2"),
+    ".claude-plugin/marketplace.json": ("aevral-plugins", "0.2.2"),
+    ".codex-plugin/plugin.json": ("aevral", "0.2.2"),
+    ".cursor-plugin/plugin.json": ("aevral", "0.2.2"),
+    ".cursor-plugin/marketplace.json": ("aevral-plugins", "0.2.2"),
+    ".grok-plugin/plugin.json": ("aevral", "0.2.2"),
+    "gemini-extension.json": ("aevral", "0.2.2"),
 }
 
 for rel, (name, ver) in json_files.items():

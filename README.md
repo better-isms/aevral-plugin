@@ -1,14 +1,20 @@
 # Aevral for coding agents
 
-**Catch security flaws before you merge.** Automatic pull request reviews flag
-authorization, IDOR, and business-logic flaws, with a suggested fix you apply.
+Aevral is an AI security reviewer for GitHub pull requests. Built by Better
+ISMS, the company behind ISMS Copilot, in Paris, France.
 
-By [Better ISMS](https://aevral.com).
+**Catch security flaws before you merge.** Pull request reviews look for
+access control, business logic, SQL and command injection, XSS, SSRF, path
+traversal, unsafe deserialization, token and session flaws, and
+LLM-integration risks, with a suggested fix you apply. Reviews are advisory
+and never block a merge. The optional whole-repo scan reads authorization,
+IDOR, and business-logic access control only. Not secret, dependency, or
+memory-corruption scanning, and not a general SAST. GitHub only.
 
 This plugin does **not** review code on your machine. It is a setup skill for
 the [Aevral GitHub App](https://github.com/apps/aevral). After the App is
 installed, the next pull request can already be reviewed, including before
-anyone claims in the console. MCP is not live. Do not invent an MCP server.
+anyone signs in to the console. MCP is not live. Do not invent an MCP server.
 
 ## Install
 
@@ -76,13 +82,17 @@ Same GitHub user for both.
    https://app.aevral.com/login?ref=claude-plugin
 2. GitHub App: https://github.com/apps/aevral
 
-Reviews can start on the next pull request after the App install. The console
-is for claiming, reports, turning reviews off, and an optional whole-repo scan.
+Reviews can start on the next pull request after the App install. Signing in
+with GitHub connects the install; the console is for reports, turning reviews
+off, and an optional whole-repo scan.
 
 ## Pricing
 
 - **Public repositories:** free up to 500 reviews per organization per month.
-- **Private repositories:** free up to 25 per month.
+- **Private repositories:** free up to 25 per month, plus a 14-day trial (up
+  to 500 private reviews) when you sign in with GitHub. No card.
+
+Priced per organization, never per seat.
 
 Paid plans: https://aevral.com/pricing
 
