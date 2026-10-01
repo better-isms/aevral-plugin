@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.3
+
+OpenAI Plugins Directory listing metadata. The root and Claude manifests
+carry `extensions.com.openai` with explicit interface text: short
+description "AI security review for PRs" (within the 30-character limit),
+a long description without plan pricing (the directory forbids pricing in
+the description), starter prompts, support URL, and the logo path.
+Version bump to 0.2.3 across all manifests. No skill behavior change.
+
 ## 0.2.2
 
 Description and README lead with "Aevral is an AI security reviewer for
