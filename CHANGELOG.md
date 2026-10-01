@@ -6,7 +6,9 @@ OpenAI Plugins Directory listing metadata. The root and Claude manifests
 carry `extensions.com.openai` with explicit interface text: short
 description "AI security review for PRs" (within the 30-character limit),
 a long description without plan pricing (the directory forbids pricing in
-the description), starter prompts, support URL, and the logo path.
+the description), starter prompts, support URL, and the logo path. The description does not
+name other AI products (directory rule: no references to another AI
+assistant, model, or platform).
 Version bump to 0.2.3 across all manifests. No skill behavior change.
 
 ## 0.2.2
